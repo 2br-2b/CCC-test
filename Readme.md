@@ -1,0 +1,1 @@
+This is an attempt to play around with the CCC in json format from https://github.com/nossbigg/catechism-ccc-json
