@@ -8,9 +8,19 @@ def print_keys(data):
 with open('ccc.json', 'rt') as f:
     ccc = json.load(f)
 
-for item in ccc['page_nodes']['toc-2']['paragraphs']:
-    for item2 in item['elements']:
-        if item2['type'] == 'text':
-            print(item2['text'])
-        else:
-            print(item2['type'])
+s = ''
+
+print_keys(ccc['page_nodes'])
+
+for i in range(1, 396):
+    try:
+        string = 'toc-' + str(i)
+        for item in ccc['page_nodes'][string]['paragraphs']:
+            for item2 in item['elements']:
+                if item2['type'] == 'text':
+                    s += item2['text'] + '\n'
+    except:
+        "hi"
+
+with open('ccc.txt', 'w') as f: 
+    f.write(s)
